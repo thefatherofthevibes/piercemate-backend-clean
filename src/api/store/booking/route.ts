@@ -1,21 +1,28 @@
 export const GET = async (req: any, res: any) => {
-  const appointmentModuleService = req.scope.resolve("appointment") as any
-  const filters = req.query || {}
-  
-  const [appointments, count] = await appointmentModuleService.listAndCountAppointments(
-    filters,
-    { order: { created_at: "DESC" } }
-  )
+  try {
+    console.log("[BOOKING] GET request received")
+    const appointmentModuleService = req.scope.resolve("appointment")
+    console.log("[BOOKING] Appointment service resolved")
+    
+    const filters = req.query || {}
+    const [appointments, count] = await appointmentModuleService.listAndCountAppointments(
+      filters,
+      { order: { created_at: "DESC" } }
+    )
 
-  res.json({
-    carts: appointments,
-    count,
-  })
+    res.json({
+      carts: appointments,
+      count,
+    })
+  } catch (error) {
+    console.error("[BOOKING] Error:", error)
+    res.status(500).json({ error: error.message })
+  }
 }
 
 export const POST = async (req: any, res: any) => {
-  const appointmentModuleService = req.scope.resolve("appointment") as any
-  const data = req.body as any
+  const appointmentModuleService = req.scope.resolve("appointment")
+  const data = req.body
 
   try {
     const appointmentData = {
@@ -58,8 +65,8 @@ export const POST = async (req: any, res: any) => {
 }
 
 export const DELETE = async (req: any, res: any) => {
-  const appointmentModuleService = req.scope.resolve("appointment") as any
-  const { id } = req.body as any
+  const appointmentModuleService = req.scope.resolve("appointment")
+  const { id } = req.body
 
   try {
     await appointmentModuleService.deleteAppointments(id)
