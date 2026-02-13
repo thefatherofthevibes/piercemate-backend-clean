@@ -1,5 +1,5 @@
 import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
-import { APPOINTMENT_MODULE } from "../../../modules/appointment"
+import { APPOINTMENT_MODULE } from "../../../modules/appointment/index.js"
 
 export const GET = async (req: MedusaRequest, res: MedusaResponse) => {
   const appointmentModuleService = req.scope.resolve(APPOINTMENT_MODULE) as any
