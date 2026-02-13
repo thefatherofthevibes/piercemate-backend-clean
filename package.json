@@ -1,0 +1,23 @@
+{
+  "name": "piercemate-backend-clean",
+  "version": "0.0.1",
+  "description": "Clean Medusa v2 backend for Piercemate",
+  "scripts": {
+    "build": "medusa build",
+    "start": "medusa start",
+    "dev": "medusa develop"
+  },
+  "dependencies": {
+    "@medusajs/cli": "2.12.5",
+    "@medusajs/framework": "2.12.5",
+    "@medusajs/medusa": "2.12.5",
+    "@medusajs/utils": "2.12.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
