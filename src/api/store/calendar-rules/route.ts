@@ -1,7 +1,6 @@
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
 import { Modules } from "@medusajs/utils"
 
-export const GET = async (req: MedusaRequest, res: MedusaResponse) => {
+export const GET = async (req: any, res: any) => {
   const tenantId = req.query.tenant_id as string
   
   if (!tenantId) {
