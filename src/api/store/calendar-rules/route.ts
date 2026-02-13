@@ -43,7 +43,7 @@ export const GET = async (req: MedusaRequest, res: MedusaResponse) => {
   }
 }
 
-export const POST = async (req: MedusaRequest, res: MedusaResponse) => {
+export const POST = async (req: any, res: any) => {
   const tenantId = req.query.tenant_id as string
   const body = req.body as any
   const shifts = body.shifts

@@ -1,6 +1,4 @@
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
-
-export const GET = async (req: MedusaRequest, res: MedusaResponse) => {
+export const GET = async (req: any, res: any) => {
   const appointmentModuleService = req.scope.resolve("appointment") as any
   const filters = req.query || {}
   
@@ -15,7 +13,7 @@ export const GET = async (req: MedusaRequest, res: MedusaResponse) => {
   })
 }
 
-export const POST = async (req: MedusaRequest, res: MedusaResponse) => {
+export const POST = async (req: any, res: any) => {
   const appointmentModuleService = req.scope.resolve("appointment") as any
   const data = req.body as any
 
@@ -59,7 +57,7 @@ export const POST = async (req: MedusaRequest, res: MedusaResponse) => {
   }
 }
 
-export const DELETE = async (req: MedusaRequest, res: MedusaResponse) => {
+export const DELETE = async (req: any, res: any) => {
   const appointmentModuleService = req.scope.resolve("appointment") as any
   const { id } = req.body as any
 

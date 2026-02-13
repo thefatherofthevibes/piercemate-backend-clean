@@ -1,7 +1,6 @@
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
 import { Modules, ContainerRegistrationKeys } from "@medusajs/framework/utils"
 
-export const POST = async (req: MedusaRequest, res: MedusaResponse) => {
+export const POST = async (req: any, res: any) => {
   const body = req.body as any
   const store_name = body.store_name
 
