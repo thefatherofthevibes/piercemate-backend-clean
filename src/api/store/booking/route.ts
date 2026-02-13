@@ -1,8 +1,7 @@
 import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
-import { APPOINTMENT_MODULE } from "../../../modules/appointment/index.js"
 
 export const GET = async (req: MedusaRequest, res: MedusaResponse) => {
-  const appointmentModuleService = req.scope.resolve(APPOINTMENT_MODULE) as any
+  const appointmentModuleService = req.scope.resolve("appointment") as any
   const filters = req.query || {}
   
   const [appointments, count] = await appointmentModuleService.listAndCountAppointments(
@@ -17,7 +16,7 @@ export const GET = async (req: MedusaRequest, res: MedusaResponse) => {
 }
 
 export const POST = async (req: MedusaRequest, res: MedusaResponse) => {
-  const appointmentModuleService = req.scope.resolve(APPOINTMENT_MODULE) as any
+  const appointmentModuleService = req.scope.resolve("appointment") as any
   const data = req.body as any
 
   try {
@@ -61,7 +60,7 @@ export const POST = async (req: MedusaRequest, res: MedusaResponse) => {
 }
 
 export const DELETE = async (req: MedusaRequest, res: MedusaResponse) => {
-  const appointmentModuleService = req.scope.resolve(APPOINTMENT_MODULE) as any
+  const appointmentModuleService = req.scope.resolve("appointment") as any
   const { id } = req.body as any
 
   try {
