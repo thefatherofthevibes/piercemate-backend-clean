@@ -1,6 +1,5 @@
 [build]
 builder = "NIXPACKS"
-nixpacksConfigPath = "nixpacks.toml"
 
 [deploy]
 startCommand = "medusa db:migrate && medusa db:sync-links && medusa start"
