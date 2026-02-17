@@ -5,8 +5,7 @@
   "scripts": {
     "build": "medusa build",
     "start": "medusa start",
-    "dev": "medusa develop",
-    "create-admin": "medusa exec ./scripts/create-admin.ts"
+    "dev": "medusa develop"
   },
   "dependencies": {
     "@medusajs/cli": "2.12.5",
