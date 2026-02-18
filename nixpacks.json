@@ -2,12 +2,9 @@
   "phases": {
     "install": {
       "cmds": ["npm install --legacy-peer-deps"]
-    },
-    "build": {
-      "cmds": ["npx medusa build --deployment"]
     }
   },
   "start": {
-    "cmd": "medusa db:migrate && medusa db:sync-links && medusa start"
+    "cmd": "npm run build && medusa db:migrate && medusa db:sync-links && medusa start"
   }
 }
