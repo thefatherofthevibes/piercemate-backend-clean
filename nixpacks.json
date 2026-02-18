@@ -4,7 +4,9 @@
       "cmds": ["npm install --legacy-peer-deps"]
     },
     "build": {
-      "cmds": ["npm run build"]
+      "cmds": [
+        "npx medusa build --admin"
+      ]
     }
   },
   "start": {
