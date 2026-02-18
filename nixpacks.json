@@ -5,7 +5,7 @@
     },
     "build": {
       "cmds": [
-        "npx medusa build --admin"
+        "npx medusa build"
       ]
     }
   },
