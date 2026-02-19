@@ -1,13 +1,13 @@
 {
   "phases": {
     "install": {
-      "cmds": [
-        "rm -rf node_modules",
-        "npm install --legacy-peer-deps"
-      ]
+      "cmds": ["npm install --legacy-peer-deps"]
+    },
+    "build": {
+      "cmds": ["NODE_ENV=production npm run build"]
     }
   },
   "start": {
-    "cmd": "npm run build && medusa db:migrate && medusa db:sync-links && medusa start"
+    "cmd": "medusa db:migrate && medusa db:sync-links && medusa start"
   }
 }
