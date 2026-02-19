@@ -1,7 +1,10 @@
 {
   "phases": {
     "install": {
-      "cmds": ["npm install --legacy-peer-deps"]
+      "cmds": [
+        "rm -rf node_modules",
+        "npm install --legacy-peer-deps"
+      ]
     }
   },
   "start": {
